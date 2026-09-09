@@ -20,7 +20,7 @@
 
       doc.title = 'Желание сквозь Вселенную — TEST';
       const css = doc.querySelector('link[rel="stylesheet"]');
-      if (css) css.href = 'style.css';
+      if (css) css.href = 'style.css?v=20260909-photos2';
       doc.querySelectorAll('script[src]').forEach((s) => {
         if (s.getAttribute('src') === 'script.js') s.setAttribute('src', 'script-base.js');
       });
@@ -90,7 +90,7 @@
       if (audience) {
         audience.id = 'scenarios';
         audience.querySelector('.section-heading').innerHTML = '<span class="section-kicker">Сценарии участия</span><h2>Один проект — три понятных способа участия</h2><p>Вы выбираете не другую технологию, а контекст, в котором хотите прожить этот опыт.</p>';
-        audience.querySelector('.section-heading').insertAdjacentHTML('afterend', `<div class="test-side-layout reveal"><div class="section-heading compact"><span class="section-kicker">Сценарии участия</span><h2>Один проект — три понятных способа участия</h2><p>Вы выбираете не другую технологию, а контекст, в котором хотите прожить этот опыт.</p></div>${art('assets/test-scenarios.webp','Личное желание, подарок близкому и общий космический сигнал')}</div>`);
+        audience.querySelector('.section-heading').insertAdjacentHTML('afterend', `<div class="test-side-layout reveal"><div class="section-heading compact"><span class="section-kicker">Сценарии участия</span><h2>Один проект — три понятных способа участия</h2><p>Вы выбираете не другую технологию, а контекст, в котором хотите прожить этот опыт.</p></div>${art('assets/test-scenarios.webp?v=20260909-photos2','Личное желание, подарок близкому и общий космический сигнал')}</div>`);
         audience.querySelector('.section-heading').remove();
         audience.querySelector('.audience-grid').innerHTML = `
           <article><span>♡</span><strong>Для себя</strong><p>Зафиксировать важную мысль, желание или начало нового этапа и получить собственный Universe ID.</p><button class="footer-link-button js-open-builder" type="button">Оставить заявку</button></article>
@@ -101,14 +101,14 @@
       }
 
       const formatsHeading = doc.querySelector('#formats .section-heading');
-      if (formatsHeading) formatsHeading.insertAdjacentHTML('afterend', art('assets/test-formats.webp','Форматы участия в проекте Желание сквозь Вселенную'));
+      if (formatsHeading) formatsHeading.insertAdjacentHTML('afterend', art('assets/test-formats.webp?v=20260909-photos2','Форматы участия в проекте Желание сквозь Вселенную'));
 
       const technology = doc.querySelector('#technology');
       if (technology) {
         const mission = doc.createElement('section');
         mission.className = 'section section-dark';
         mission.id = 'mission';
-        mission.innerHTML = `<div class="container"><div class="test-side-layout reveal"><div class="section-heading"><span class="section-kicker">После формирования пакета</span><h2>Куда направлен сигнал</h2><p>Здесь показывается именно технический маршрут передачи, а не повтор механики создания желания.</p></div>${art('assets/test-mission.webp','Радиоантенна отправляет сигнал к выбранной звезде')}</div><div class="mission-card reveal"><span class="section-kicker">Маршрут сигнала <span class="test-inline-label">TEST</span></span><div class="mission-route">Земля → передающая антенна → выбранная звезда</div><p>После подтверждённого сеанса этот блок будет показывать фактические дату и время, антенну, направление, параметры пакета и статус передачи.</p><div class="transmission-status"><span class="status-pulse"></span><span><strong>Следующее окно передачи:</strong> появится только после технического согласования</span></div></div></div>`;
+        mission.innerHTML = `<div class="container"><div class="test-side-layout reveal"><div class="section-heading"><span class="section-kicker">После формирования пакета</span><h2>Куда направлен сигнал</h2><p>Здесь показывается именно технический маршрут передачи, а не повтор механики создания желания.</p></div>${art('assets/test-mission.webp?v=20260909-photos2','Радиоантенна отправляет сигнал к выбранной звезде')}</div><div class="mission-card reveal"><span class="section-kicker">Маршрут сигнала <span class="test-inline-label">TEST</span></span><div class="mission-route">Земля → передающая антенна → выбранная звезда</div><p>После подтверждённого сеанса этот блок будет показывать фактические дату и время, антенну, направление, параметры пакета и статус передачи.</p><div class="transmission-status"><span class="status-pulse"></span><span><strong>Следующее окно передачи:</strong> появится только после технического согласования</span></div></div></div>`;
         technology.insertAdjacentElement('afterend', mission);
       }
 
@@ -120,7 +120,7 @@
         const registry = doc.createElement('section');
         registry.className = 'section section-dark';
         registry.id = 'registry';
-        registry.innerHTML = `<div class="container"><div class="test-side-layout reverse reveal"><div class="section-heading"><span class="section-kicker">После создания Universe ID</span><h2>Universe Registry</h2><p>Публичный реестр подтверждает существование сигнала, но не раскрывает личное содержание без согласия владельца.</p></div>${art('assets/test-registry.webp','Космический архив и реестр уникальных сигналов')}</div><div class="registry-card reveal"><div class="registry-row"><strong>UNV-DEMO-000184</strong><span>Москва → HD 20794</span><span>PREPARED</span></div><div class="registry-row"><strong>UNV-DEMO-000185</strong><span>Санкт-Петербург → TRAPPIST-1</span><span>PREPARED</span></div><div class="registry-row"><strong>UNV-DEMO-000186</strong><span>Казань → Polaris</span><span>DEMO</span></div></div></div>`;
+        registry.innerHTML = `<div class="container"><div class="test-side-layout reverse reveal"><div class="section-heading"><span class="section-kicker">После создания Universe ID</span><h2>Universe Registry</h2><p>Публичный реестр подтверждает существование сигнала, но не раскрывает личное содержание без согласия владельца.</p></div>${art('assets/test-registry.webp?v=20260909-photos2','Космический архив и реестр уникальных сигналов')}</div><div class="registry-card reveal"><div class="registry-row"><strong>UNV-DEMO-000184</strong><span>Москва → HD 20794</span><span>PREPARED</span></div><div class="registry-row"><strong>UNV-DEMO-000185</strong><span>Санкт-Петербург → TRAPPIST-1</span><span>PREPARED</span></div><div class="registry-row"><strong>UNV-DEMO-000186</strong><span>Казань → Polaris</span><span>DEMO</span></div></div></div>`;
         certificate.insertAdjacentElement('afterend', registry);
       }
 
@@ -128,7 +128,7 @@
       if (ctaCard) {
         const ctaCopy = ctaCard.querySelector('div:first-child');
         if (ctaCopy) ctaCopy.innerHTML = '<span class="section-kicker">Первая передача формируется</span><h2>Оставьте заявку на участие в проекте</h2><p>Мы свяжемся с вами, расскажем о формате, сроках и следующих шагах. Само желание в заявке указывать не нужно.</p>';
-        ctaCard.insertAdjacentHTML('beforeend', art('assets/test-cta.webp','Личное послание начинает путь к звёздам'));
+        ctaCard.insertAdjacentHTML('beforeend', art('assets/test-cta.webp?v=20260909-photos2','Личное послание начинает путь к звёздам'));
       }
 
       const applySideLayout = (selector, reverse = false) => {
