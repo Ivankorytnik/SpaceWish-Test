@@ -4,7 +4,7 @@
   const favicon = document.querySelector('link[rel~="icon"]') || document.createElement('link');
   favicon.rel = 'icon';
   favicon.type = 'image/svg+xml';
-  favicon.href = 'favicon-test.svg';
+  favicon.href = 'favicon-test.svg?v=20260909';
   if (!favicon.parentNode) document.head.appendChild(favicon);
 
   const $ = (selector, root = document) => root.querySelector(selector);
