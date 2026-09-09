@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#05070c">
+  <meta name="robots" content="noindex,nofollow">
+  <title>SpaceWish — TEST</title>
+  <style>
+    html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#05070c}
+    #loading{position:fixed;inset:0;display:grid;place-items:center;background:#05070c;color:#fff;font:16px system-ui;z-index:1}
+    iframe{position:fixed;inset:0;width:100%;height:100%;border:0;background:#05070c;opacity:0;transition:opacity .15s ease;z-index:2}
+  </style>
+</head>
+<body>
+  <div id="loading">Загрузка SpaceWish TEST…</div>
+  <iframe id="site" src="https://cdn.jsdelivr.net/gh/Ivankorytnik/Jelanie@f93e3afa82fbafc82dea9a59484cca85ad039d7e/test/index.html" title="SpaceWish TEST"></iframe>
+  <script>
+    const frame=document.getElementById('site');
+    frame.addEventListener('load',()=>{document.getElementById('loading')?.remove();frame.style.opacity='1';});
+  </script>
+</body>
+</html>
