@@ -1,0 +1,49 @@
+name: Fix SpaceWish Test favicon
+
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-favicon.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fix favicon links
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+
+          path = Path('index.html')
+          text = path.read_text(encoding='utf-8')
+          old = '<link rel="icon" href="../favicon-test.svg" type="image/svg+xml">'
+          new = '<link rel="icon" href="favicon-test.svg?v=20260909" type="image/svg+xml">\n  <link rel="shortcut icon" href="favicon-test.svg?v=20260909" type="image/svg+xml">'
+          if old not in text:
+              raise SystemExit('Old favicon link not found')
+          text = text.replace(old, new, 1)
+          path.write_text(text, encoding='utf-8')
+
+          js = Path('script-base.js')
+          source = js.read_text(encoding='utf-8')
+          source = source.replace("favicon.href = 'favicon-test.svg';", "favicon.href = 'favicon-test.svg?v=20260909';")
+          js.write_text(source, encoding='utf-8')
+          PY
+
+          rm -f .github/workflows/fix-favicon.yml
+
+      - name: Commit favicon fix
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "spacewish-test-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          git commit -m "Fix SpaceWish Test favicon"
+          git push
